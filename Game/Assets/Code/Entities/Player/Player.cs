@@ -16,8 +16,23 @@ public class Player : Entity {
 
 	public int direction;
 
+	public WeaponManager weaponManager;
+
 	void Start () {
 		ipManager.addToItemInventory(0, 5);
+		foreach(Weapons w in weaponManager.weapons)
+		{
+			if(w.isHolding)
+			{
+				weaponSpriteParent.sprite = w.weaponSprite;
+				if(w.weaponType == WeaponType.Sword)
+				{
+					Sword sword = weaponSpriteParent.gameObject.AddComponent("Sword") as Sword;
+					sword.minDamage = 15;
+					sword.maxDamage = 25;
+				}
+			}
+		}
 	}
 
 	void Update () 

@@ -5,6 +5,8 @@ public abstract class Entity : MonoBehaviour {
 
 	public float speed;
 
+	public bool isHostile;
+
 	public int health;
 
 	void Start () {

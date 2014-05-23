@@ -41,11 +41,14 @@ public class AttackingMob : Entity {
 			attackEntity();
 			StartCoroutine(waitForAttack());
 		}
+
+		if(health <= 0)
+			Die();
 	}
 
 	public void Die()
 	{
-
+		Destroy(gameObject);
 	}
 
 	public void attackEntity()

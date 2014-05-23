@@ -1,31 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Level : MonoBehaviour {
 
 	private int levelWidth;
 	private int levelHeight;
 
-	public Transform grassTile;
-	public Transform stoneBrickTile;
 	public Transform enemy;
 
 	private Color[] tileColours;
-
-	public Color grassColour;
-	public Color stoneBrickColour;
+	private Color[] topTileColours;
 	public Color spawnPointColour;
 	public Color enemyPointColour;
 
 	public Texture2D levelTexture;
+	public Texture2D topTileTexture;
 
 	public Entity player;
 	public Entity[] friendlyEntities;
+
+	public List<Tile> tiles = new List<Tile>();
 
 	void Start () {
 		levelWidth = levelTexture.width;
 		levelHeight = levelTexture.height;
 		loadLevel();
+		loadTopTiles();
 	}
 
 	void Update () {
@@ -41,17 +42,14 @@ public class Level : MonoBehaviour {
 		{
 			for(int x = 0; x < levelWidth; x++)
 			{
-				if(tileColours[x+y*levelWidth] == grassColour)
+				foreach(Tile t in tiles)
 				{
-					Instantiate(grassTile, new Vector3(x, y), Quaternion.identity);
-				}
-				if(tileColours[x+y*levelWidth] == stoneBrickColour)
-				{
-					Instantiate(stoneBrickTile, new Vector3(x, y), Quaternion.identity);
+					if(tileColours[x+y*levelWidth] == t.tileColor)
+						Instantiate(t.tileTransform, new Vector3(x, y), Quaternion.identity);
 				}
 				if(tileColours[x+y*levelWidth] == spawnPointColour)
 				{
-					Instantiate(grassTile, new Vector3(x, y), Quaternion.identity);
+					Instantiate(tiles[0].tileTransform, new Vector3(x, y), Quaternion.identity);
 					Vector2 pos = new Vector2(x, y);
 					player.transform.position = pos;
 					for(int i = 0; i < friendlyEntities.Length; i++)
@@ -63,10 +61,39 @@ public class Level : MonoBehaviour {
 				}
 				if(tileColours[x+y*levelWidth] == enemyPointColour)
 				{
-					Instantiate(grassTile, new Vector3(x, y), Quaternion.identity);
+					Instantiate(tiles[0].tileTransform, new Vector3(x, y), Quaternion.identity);
 					Instantiate(enemy, new Vector3(x, y), Quaternion.identity);
 				}
 			}
 		}
 	}
+
+	void loadTopTiles()
+	{
+		topTileColours = new Color[topTileTexture.width * topTileTexture.height];
+		topTileColours = topTileTexture.GetPixels();
+
+		for(int y = 0; y < levelHeight; y++)
+		{
+			for(int x = 0; x < levelWidth; x++)
+			{
+				foreach(Tile t in tiles)
+				{
+					if(topTileColours[x+y*levelWidth] == t.tileColor)
+					{
+						Instantiate(t.tileTransform, new Vector3(x, y), Quaternion.identity);
+					}
+				}
+			}
+		}
+	}
+}
+
+[System.Serializable]
+public class Tile
+{
+	public string tileName;
+
+	public Color tileColor;
+	public Transform tileTransform;
 }
