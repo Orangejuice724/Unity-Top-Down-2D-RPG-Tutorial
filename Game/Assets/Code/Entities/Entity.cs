@@ -22,4 +22,9 @@ public abstract class Entity : MonoBehaviour {
 	{
 		health = health - amount;
 	}
+
+	public void TPToPos(Vector2 pos)
+	{
+		rigidbody2D.transform.position = pos;
+	}
 }

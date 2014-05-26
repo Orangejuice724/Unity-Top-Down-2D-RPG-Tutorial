@@ -1980,33 +1980,6 @@ TextureImporter:
         height: 16
       alignment: 0
       pivot: {x: .5, y: .5}
-    - name: spritesheet-main_221
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: .5, y: .5}
-    - name: spritesheet-main_222
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: .5, y: .5}
-    - name: spritesheet-main_223
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: .5, y: .5}
     - name: spritesheet-main_232
       rect:
         serializedVersion: 2
@@ -2047,33 +2020,6 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: .5, y: .5}
-    - name: spritesheet-main_237
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: .5, y: .5}
-    - name: spritesheet-main_238
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: .5, y: .5}
-    - name: spritesheet-main_239
-      rect:
-        serializedVersion: 2
-        x: 240
         y: 16
         width: 16
         height: 16
@@ -2165,26 +2111,8 @@ TextureImporter:
         serializedVersion: 2
         x: 208
         y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: .5, y: .5}
-    - name: spritesheet-main_254
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: .5, y: .5}
-    - name: spritesheet-main_255
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 16
-        height: 16
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
   spritePackingTag: 
