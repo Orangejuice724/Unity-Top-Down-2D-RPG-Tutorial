@@ -10,8 +10,7 @@ public class Villager : Entity {
 	void Start () {
 	
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 	
 	}
