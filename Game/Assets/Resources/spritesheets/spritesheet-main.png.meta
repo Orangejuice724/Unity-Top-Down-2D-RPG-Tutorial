@@ -1719,33 +1719,6 @@ TextureImporter:
         height: 16
       alignment: 0
       pivot: {x: .5, y: .5}
-    - name: spritesheet-main_189
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: .5, y: .5}
-    - name: spritesheet-main_190
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: .5, y: .5}
-    - name: spritesheet-main_191
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: .5, y: .5}
     - name: spritesheet-main_194
       rect:
         serializedVersion: 2
@@ -1850,26 +1823,8 @@ TextureImporter:
         serializedVersion: 2
         x: 208
         y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: .5, y: .5}
-    - name: spritesheet-main_206
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: .5, y: .5}
-    - name: spritesheet-main_207
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 48
-        width: 16
-        height: 16
+        width: 48
+        height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
     - name: spritesheet-main_208
