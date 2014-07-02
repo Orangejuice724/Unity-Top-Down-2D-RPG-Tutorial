@@ -10,6 +10,8 @@ public class Player : Entity {
 
 	public WeaponManager weaponManager;
 
+	public int money = 500;
+
 	void Start () {
 		ipManager.addToItemInventory(0, 5);
 		foreach(Weapons w in weaponManager.weapons)
@@ -99,5 +101,17 @@ public class Player : Entity {
 	public void Die()
 	{
 		print ("I've been killed");
+	}
+
+	public void addMoney(int am)
+	{
+		money = money + am;
+	}
+
+	public void takeMoney(int am)
+	{
+		money = money - am;
+		if(money < 0)
+			money = 0;
 	}
 }

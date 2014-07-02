@@ -15,6 +15,23 @@ public class Shop : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public void removeItemFromShop(int index)
+	{
+		sellingItems[index].amountOfItem = sellingItems[index].amountOfItem - 1;
+		if(sellingItems[index].amountOfItem <= 0)
+			sellingItems.Remove(sellingItems[index]);
+	}
+
+	public void removeItemFromShop(int index, Player pl)
+	{
+		pl.takeMoney(sellingItems[index].price);
+		pl.ipManager.addToItemInventory(sellingItems[index].item.id, 1);
+		sellingItems[index].amountOfItem = sellingItems[index].amountOfItem - 1;
+		if(sellingItems[index].amountOfItem <= 0)
+			sellingItems.Remove(sellingItems[index]);
+
+	}
 }
 
 [System.Serializable]
