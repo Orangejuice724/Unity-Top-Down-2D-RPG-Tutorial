@@ -8,6 +8,7 @@ public abstract class Entity : MonoBehaviour {
 	public bool isHostile;
 
 	public int health;
+	public int maxHealth;
 
 	public Sprite forward;
 	public Sprite backward;

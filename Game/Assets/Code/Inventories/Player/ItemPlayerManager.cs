@@ -23,8 +23,26 @@ public class ItemPlayerManager : MonoBehaviour {
 		{
 			if(iManager.items[i].itemTransform.GetComponent<Item>().id == itemId)
 			{
-				inventory inv = new inventory(iManager.items[i].itemTransform.GetComponent<Item>(), amount);
-				items.Add (inv);
+				bool isItemInList = false;
+				int index = 0;
+				for(int j = 0; j < items.Count; j++)
+				{
+					if(items[j].item.id == itemId)
+					{
+						isItemInList = true;
+						index = j;
+					}
+				}
+
+				if(isItemInList)
+				{
+					items[index].amountOfItem += amount;
+				}
+				else
+				{
+					inventory inv = new inventory(iManager.items[i].itemTransform.GetComponent<Item>(), amount);
+					items.Add (inv);
+				}
 			}
 		}
 	}

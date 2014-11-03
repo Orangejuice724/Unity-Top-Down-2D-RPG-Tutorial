@@ -8,6 +8,9 @@ public class Level : MonoBehaviour {
 	private int levelHeight;
 
 	public Transform enemy;
+	public Transform parent;
+
+	public HUDController hc;
 
 	private Color[] tileColours;
 	private Color[] topTileColours;
@@ -45,7 +48,9 @@ public class Level : MonoBehaviour {
 				foreach(Tile t in tiles)
 				{
 					if(tileColours[x+y*levelWidth] == t.tileColor)
+					{
 						Instantiate(t.tileTransform, new Vector3(x, y), Quaternion.identity);
+					}
 				}
 				if(tileColours[x+y*levelWidth] == spawnPointColour)
 				{
